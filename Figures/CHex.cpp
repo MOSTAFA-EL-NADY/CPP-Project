@@ -47,5 +47,21 @@ void CHex::DrawMe(GUI* pGUI) const
 }
 void CHex::Save(ofstream& OutFile)
 {
+	if (OutFile.is_open())
+	{
+		OutFile<<"HEXAGON"
+			<<"\t"<<ID
+			<<"\t"<< TopLeft.x
+			<<"\t"<< TopLeft.y
+			<< "\t" << Llen
+			<<"\t"<< Rlen
+			<< "\t" << ColorToString(this->FigGfxInfo.DrawClr);
+		if (!this->FigGfxInfo.isFilled)
+			OutFile << "\t" << "NO-FILL";
+		else
+			OutFile << "\t" << ColorToString(this->FigGfxInfo.FillClr);
+		OutFile << "\n";
+		
+	}
 
  }

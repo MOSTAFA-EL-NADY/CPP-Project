@@ -1,4 +1,5 @@
 #include "CEllipse.h"
+#include "fstream"
 
 CEllipse::CEllipse(Point P1, Point P2, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 {
@@ -44,7 +45,22 @@ void CEllipse::DrawMe(GUI* pGUI) const
 }
 void CEllipse::Save(ofstream& OutFile)
 {
+	if (OutFile.is_open())
+	{
+		OutFile << "Ellips"
+			<< "\t" << ID
+			<< "\t" << TopLeftCorner.x
+			<< "\t" << TopLeftCorner.y
+			<< "\t" << low.x
+			<< "\t" << low.y
+		    << "\t" << ColorToString(this->FigGfxInfo.DrawClr);
+			if (!this->FigGfxInfo.isFilled)
+				OutFile << "\t" << "NO-FILL";
+			else
+				OutFile << "\t" << ColorToString(this->FigGfxInfo.FillClr);
+			OutFile << "\n";
 
+	}
  }
 
 
