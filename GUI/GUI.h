@@ -14,6 +14,7 @@ class GUI
 public:	
 	window* pWind;	//Pointer to the Graphics Window
 	bool isfilled;
+	bool isDrawed;
 public:
 
 	GUI();	
@@ -51,6 +52,8 @@ public:
 	color getCrntFillColor() const;	//get current filling color
 	int getCrntPenWidth() const;		//get current pen width
 	void  setFillcolor(color c) ;
+	void SetDrawColor(color c);
+	void SetBgColor(color c);
 	COLORSITEM getcolor();
 	
 

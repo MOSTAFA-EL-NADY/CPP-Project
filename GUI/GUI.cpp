@@ -5,6 +5,7 @@ GUI::GUI()
 {
 	//Initialize user interface parameters
 	isfilled = false;
+	isDrawed = false;
 	UI.InterfaceMode = MODE_DRAW;
 	
 	UI.width = 1300;
@@ -97,6 +98,8 @@ ActionType GUI::MapInputToActionType() const
 			case ITM_ELPS: return DRAW_ELPS;
 			case ITM_HEX: return DRAW_HEX;
 			case ITM_FILLCOLOR: return CHNG_FILL_CLR;
+			case ITM_DRAWCOLOR: return CHNG_DRAW_CLR;
+			case ITM_CHNGBGCOLOR: return CHNG_BK_CLR;
  			case ITM_EXIT: return EXIT;	
 			
 			
@@ -166,11 +169,14 @@ void GUI::CreateDrawToolBar() const
 	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
 	MenuItemImages[ITM_HEX] = "images\\MenuItems\\HEX.jpg";
 	MenuItemImages[ITM_FILLCOLOR] = "images\\MenuItems\\colors.jpg";
+	MenuItemImages[ITM_DRAWCOLOR] = "images\\MenuItems\\colorpallette.jpg";
+	MenuItemImages[ITM_CHNGBGCOLOR] = "images\\MenuItems\\bgcolor.jpg";
+
 	
 	//TODO: Prepare images for each menu item and add it to the list
 
 	//Draw menu item one image at a time
-	for(int i=0; i< COLOR_COUNT; i++)
+	for(int i=0; i< DRAW_ITM_COUNT; i++)
 		pWind->DrawImage(MenuItemImages[i], i*UI.MenuItemWidth,0,UI.MenuItemWidth, UI.ToolBarHeight);
 
 
@@ -267,6 +273,7 @@ color GUI::getCrntFillColor()const 	//get current filling color
 
 
 }
+
 //////////////////////////////////////////////////////////////////////////////////////////
 	
 int GUI::getCrntPenWidth() const		//get current pen width
@@ -368,6 +375,12 @@ void GUI::setFillcolor(color c) {
 	
 	UI.FillColor = c;
 
+}
+void GUI::SetDrawColor(color c) {
+	UI.DrawColor = c;
+}
+void GUI::SetBgColor(color c) {
+	UI.BkGrndColor = c;
 }
 COLORSITEM GUI::getcolor() {
 

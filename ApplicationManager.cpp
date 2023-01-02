@@ -1,9 +1,11 @@
 #include "ApplicationManager.h"
-#include "Actions\ActionAddSquare.h"
+#include "Actions/ActionAddSquare.h"
 #include "Actions/ActionAddEllipse.h"
 #include "Actions/ActionAddHex.h"
 #include "Actions/ActionFillColor.h"
-#include "Actions\ActionSelect.h"
+#include "Actions/ActionChngBgColor.h"
+#include "Actions/ActionDrawColor.h"
+#include "Actions/ActionSelect.h"
 //Constructor
 ApplicationManager::ApplicationManager()
 {
@@ -64,7 +66,13 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 		case CHNG_FILL_CLR:
 			newAct=new ActionFillColor(this);
 			break;
-
+		case CHNG_DRAW_CLR:
+			newAct = new ActionDrawColor(this);
+			break;
+		case CHNG_BK_CLR:
+			newAct = new ActionChngBgColor(this);
+			break;
+		
 		case DRAWING_AREA:
 			newAct = new ActionSelect(this);
 			break;
