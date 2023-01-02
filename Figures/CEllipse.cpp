@@ -42,5 +42,9 @@ void CEllipse::DrawMe(GUI* pGUI) const
 
 
 }
+void CEllipse::Save(ofstream& OutFile)
+{
+
+ }
 
 

@@ -15,6 +15,7 @@ public:
 	virtual void DrawMe(GUI* pOut) const;
 	virtual bool Get(int x, int y) const;
 	virtual string ShowFigureDetails() const;
+	virtual void Save(ofstream& OutFile);
 };
 
 #endif

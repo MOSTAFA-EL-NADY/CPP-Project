@@ -1,4 +1,7 @@
 #include "CSquare.h"
+#include <fstream>
+#include<iostream>
+#include<string.h>
 
 CSquare::CSquare(Point P1, int len, GfxInfo FigureGfxInfo):CFigure(FigureGfxInfo)
 {
@@ -33,4 +36,23 @@ string CSquare::ShowFigureDetails() const {
 		"| center point(" + to_string(Center.x) + "," + to_string(Center.y) + ") "
 		"| length=" + to_string(length) +
 		"| area=" + to_string(pow(length, 2));
+}
+
+void CSquare::Save(ofstream& OutFile)
+{
+	if (OutFile.is_open())
+	{
+
+		OutFile << "SQUARE"
+			<< "\t" << ID
+			<< "\t" << TopLeftCorner.x
+			<< "\t" << TopLeftCorner.y
+			<< "\t" << length
+			<< "\t\t" << ColorToString(this->FigGfxInfo.DrawClr);
+		if (!this->FigGfxInfo.isFilled)
+			OutFile << "\t" << "NO-FILL";
+		else
+			OutFile << "\t" << ColorToString(this->FigGfxInfo.FillClr);
+		OutFile << "\n";
+	}
 }

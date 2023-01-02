@@ -1,44 +1,58 @@
-#include "CFigure.h"
+#include "ActionSave.h"
+#include<iostream>
+#include "ActionSave.h"
+#include "..\Figures\CSquare.h"
+#include "..\ApplicationManager.h"
+#include "..\GUI\GUI.h"
 
-CFigure::CFigure() {}
-
-CFigure::CFigure(GfxInfo FigureGfxInfo)
-{ 
-	ID = ++CFigure::Fid;
-	FigGfxInfo = FigureGfxInfo;	//Default status is non-filled.
-	Selected = false;
-}
-
-void CFigure::SetSelected(bool s)
-{	Selected = s; }
-
-bool CFigure::IsSelected() const
-{	return Selected; }
-
-void CFigure::ChngDrawClr(color Dclr)
-{	FigGfxInfo.DrawClr = Dclr; }
-
-void CFigure::ChngFillClr(color Fclr)
-{	
-	FigGfxInfo.isFilled = true;
-	FigGfxInfo.FillClr = Fclr; 
-}
-
-void CFigure::ChngSelectClr(color Dclr) {
-
-	FigGfxInfo.PreviousClr = Dclr;
-}
-color CFigure::ChngSelectClr() {
-	return FigGfxInfo.PreviousClr;
-}
-
-color CFigure::GetCurrentDrawClr() {
-	return FigGfxInfo.DrawClr;
-}
-
-string CFigure::ColorToString(color c)
+ActionSave::ActionSave(ApplicationManager* pApp) :Action(pApp)
 {
 	
+}
+
+void ActionSave::Execute()
+{
+	
+
+	GUI* pGui = pManager->GetGUI();
+
+	ReadFileName();
+	if (FileName != "")
+	{
+		ofstream outputfile("SavedFigures\\" + FileName + ".txt");
+		if (outputfile.is_open())
+		{
+			outputfile << ColorToString(UI.DrawColor)
+				<< "\t" << ColorToString(UI.FillColor)
+				<< "\t" << ColorToString(UI.BkGrndColor)
+				<< "\n";
+			pManager->SaveAll(outputfile);
+
+			pGui->PrintMessage("Graph Saved successfully :)");
+
+			outputfile.close();
+		}
+
+	}
+	
+
+
+}
+
+
+void ActionSave::ReadFileName()
+{
+	GUI* Pgui = pManager->GetGUI();
+	Pgui->ClearStatusBar();
+	
+		Pgui->PrintMessage("Enter the file name you want to save :)");
+		FileName = Pgui->GetSrting();
+		
+
+}
+
+string ActionSave::ColorToString(color c) {
+
 	if ((c.ucBlue == BLACK.ucBlue) && (c.ucGreen == BLACK.ucGreen) && (c.ucRed == BLACK.ucRed))
 		return "BLACK";
 	if ((c.ucBlue == BLUE.ucBlue) && (c.ucGreen == BLUE.ucGreen) && (c.ucRed == BLUE.ucRed))
@@ -63,9 +77,7 @@ string CFigure::ColorToString(color c)
 		return "LIGHTSTEELBLUE";
 	if ((c.ucBlue == IVORY.ucBlue) && (c.ucGreen == IVORY.ucGreen) && (c.ucRed == IVORY.ucRed))
 		return"IVORY";
+	if ((c.ucBlue == HONEYDEW.ucBlue) && (c.ucGreen == HONEYDEW.ucGreen) && (c.ucRed == HONEYDEW.ucRed))
+		return"HONEYDEW";
 	return "NO-FILL";
-
-
-
-
 }

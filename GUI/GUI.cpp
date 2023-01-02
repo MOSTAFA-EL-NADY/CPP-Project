@@ -100,6 +100,7 @@ ActionType GUI::MapInputToActionType() const
 			case ITM_FILLCOLOR: return CHNG_FILL_CLR;
 			case ITM_DRAWCOLOR: return CHNG_DRAW_CLR;
 			case ITM_CHNGBGCOLOR: return CHNG_BK_CLR;
+			case ITM_SAVE:return SAVE;
  			case ITM_EXIT: return EXIT;	
 			
 			
@@ -171,6 +172,7 @@ void GUI::CreateDrawToolBar() const
 	MenuItemImages[ITM_FILLCOLOR] = "images\\MenuItems\\colors.jpg";
 	MenuItemImages[ITM_DRAWCOLOR] = "images\\MenuItems\\colorpallette.jpg";
 	MenuItemImages[ITM_CHNGBGCOLOR] = "images\\MenuItems\\bgcolor.jpg";
+	MenuItemImages[ITM_SAVE] = "images\\MenuItems\\save.jpg";
 
 	
 	//TODO: Prepare images for each menu item and add it to the list

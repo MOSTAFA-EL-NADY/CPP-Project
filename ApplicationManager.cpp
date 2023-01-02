@@ -6,6 +6,10 @@
 #include "Actions/ActionChngBgColor.h"
 #include "Actions/ActionDrawColor.h"
 #include "Actions/ActionSelect.h"
+#include"Actions/ActionSave.h"
+#include <iostream>
+#include <fstream>
+#include <string>
 //Constructor
 ApplicationManager::ApplicationManager()
 {
@@ -75,6 +79,10 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 		
 		case DRAWING_AREA:
 			newAct = new ActionSelect(this);
+			break;
+			
+		case SAVE:
+			newAct = new ActionSave(this);
 			break;
 		case EXIT:
 			///create ExitAction here
@@ -179,6 +187,21 @@ void ApplicationManager::fillSelectedFig(color c)
 
 	}
 	UpdateInterface();
+}
+
+void ApplicationManager::SaveAll(ofstream& outputfile)
+{
+	if (outputfile.is_open())
+	{
+		outputfile << to_string(FigCount) << "\n";
+
+		for (int i = 0; i < FigCount; i++)
+		{
+			FigList[i]->Save(outputfile);
+		}
+	}
+
+
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //Destructor

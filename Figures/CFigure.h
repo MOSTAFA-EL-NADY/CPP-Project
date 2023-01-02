@@ -9,6 +9,7 @@ class CFigure
 {
 protected:
 	int ID;		//Each figure has an ID
+	static int Fid;
 	bool Selected;	//true if the figure is selected.
 	GfxInfo FigGfxInfo;	//Figure graphis info
 	
@@ -27,6 +28,7 @@ public:
 	void ChngSelectClr(color Dclr);	//changes the figure's selection color
 	color ChngSelectClr();	//changes the figure's selection color
 	color virtual GetCurrentDrawClr();	//Get the current figure's fill color
+	string ColorToString(color c);
 	virtual string ShowFigureDetails() const = 0;	//show figure details
 
 	///The following functions should be supported by the figure class
@@ -39,7 +41,7 @@ public:
 	//virtual void Resize() = 0;	//Resize the figure
 	//virtual void Move() = 0;		//Move the figure
 
-	//virtual void Save(ofstream &OutFile) = 0;	//Save the figure parameters to the file
+	virtual void Save(ofstream &OutFile) = 0;	//Save the figure parameters to the file
 	//virtual void Load(ifstream &Infile) = 0;	//Load the figure parameters to the file
 
 	//virtual void PrintInfo(Output* pOut) = 0;	//print all figure info on the status bar

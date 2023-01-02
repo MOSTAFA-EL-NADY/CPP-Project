@@ -1,6 +1,6 @@
 #include "ApplicationManager.h"
 #include "GUI\GUI.h"
-
+int CFigure::Fid = 0;
 int main()
 {
 	/*

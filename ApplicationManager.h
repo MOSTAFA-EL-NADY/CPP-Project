@@ -43,6 +43,7 @@ public:
 	void UpdateInterface() const;	//Redraws all the drawing window	
 
 	void fillSelectedFig(color c);
+	void SaveAll(ofstream& outputfile);
 };
 
 #endif

@@ -45,3 +45,7 @@ void CHex::DrawMe(GUI* pGUI) const
 	
 
 }
+void CHex::Save(ofstream& OutFile)
+{
+
+ }
