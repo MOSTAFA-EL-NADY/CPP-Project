@@ -6,6 +6,8 @@
 #include "Actions/ActionChngBgColor.h"
 #include "Actions/ActionDrawColor.h"
 #include "Actions/ActionSelect.h"
+#include"Actions/ActionResize.h"
+#include "Actions\ActionSwitchToDrawMode.h"
 #include"Actions/ActionSave.h"
 #include <iostream>
 #include <fstream>
@@ -84,7 +86,18 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 		case SAVE:
 			newAct = new ActionSave(this);
 			break;
+
+		case RESIZE:
+			newAct = new ActionResize(this, SelectedFig);
+			break;
+
+		case GO_BACK:
+			newAct = new ActionSwitchToDrawMode(this);
+			break;
+
+		
 		case EXIT:
+
 			///create ExitAction here
 			
 			break;
@@ -202,6 +215,18 @@ void ApplicationManager::SaveAll(ofstream& outputfile)
 	}
 
 
+}
+//==================================================================================//
+//							Resize section 							//
+//==================================================================================//
+
+int ApplicationManager::getSelectedFigure()
+{
+
+	for (int i = 0; i < FigCount; i++)
+		if (FigList[i]->IsSelected())
+			return i;
+	return -1;
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //Destructor

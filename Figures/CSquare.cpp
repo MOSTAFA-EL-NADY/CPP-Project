@@ -28,6 +28,12 @@ bool CSquare::Get(int x, int y) const
 		return true;
 	return false;
 }
+
+void CSquare::Resize(float size) {
+	this->length = this->length * size;
+
+}
+
 string CSquare::ShowFigureDetails() const {
 	return
 		"ID=" + to_string(ID) + " "

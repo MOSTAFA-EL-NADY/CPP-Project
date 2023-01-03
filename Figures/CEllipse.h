@@ -18,6 +18,7 @@ public:
 	virtual string ShowFigureDetails() const;
 	virtual void DrawMe(GUI* pOut) const;
 	virtual void Save(ofstream& OutFile);
+	virtual void Resize(float);// to resize the shape
 	
 };
 

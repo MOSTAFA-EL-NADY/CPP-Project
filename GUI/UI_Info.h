@@ -10,6 +10,7 @@
 enum GUI_MODE	//Graphical user interface mode
 {
 	MODE_DRAW,	//Drawing mode (startup mode)
+	MODE_SIZE,
 	MODE_PLAY	//Playing mode
 };
 
@@ -21,6 +22,7 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 	ITM_ELPS,		//Ellipse item in menu
 	ITM_HEX,
 	ITM_SAVE,
+	ITM_RESIZE,
 	ITM_FILLCOLOR,
 	ITM_DRAWCOLOR,
 	ITM_CHNGBGCOLOR,
@@ -28,6 +30,17 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 	
 	DRAW_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
 	
+};
+enum SizeMenuItem // The items of colors
+{
+	ITM_QUARTER,
+	ITM_HALF,
+	ITM_DOUBLE,
+	ITM_QUADRUPLE,
+
+	ITM_BACK2,
+
+	SIZE_ITM_COUNT
 };
 
 enum ColorMenuItem
@@ -84,6 +97,7 @@ struct UI_Info	//User Interface Info.
 	color HighlightColor;	//Highlighting color
 	color MsgColor;			//Messages color
 	color BkGrndColor;		//Background color
+	color ToolBarBkGrndColor; //Toolbar background Height
 	color StatusBarColor;	//Status bar color
 	int PenWidth;			//width of the pen that draws shapes
 

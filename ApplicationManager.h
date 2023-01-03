@@ -3,7 +3,7 @@
 
 #include "DEFS.h"
 #include "Figures\CFigure.h"
-
+#include <fstream>
 class Action;	//Forward Declaration
 
 
@@ -44,6 +44,8 @@ public:
 
 	void fillSelectedFig(color c);
 	void SaveAll(ofstream& outputfile);
+
+	int getSelectedFigure(); //to get selected figure to resize
 };
 
 #endif

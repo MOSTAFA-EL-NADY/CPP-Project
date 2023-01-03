@@ -16,6 +16,7 @@ public:
 	virtual bool Get(int x, int y) const;
 	virtual string ShowFigureDetails() const;
 	virtual void Save(ofstream& OutFile);
+	virtual void Resize(float);
 };
 
 #endif
