@@ -10,6 +10,9 @@ CEllipse::CEllipse(Point P1, Point P2, GfxInfo FigureGfxInfo) :CFigure(FigureGfx
 	a = abs(TopLeftCorner.x - Center.x);
 	b = abs(TopLeftCorner.y - Center.y);
 }
+
+CEllipse::CEllipse(){}
+
 bool CEllipse::Get(int x, int y) const
 {
 	// (x - h) ^ 2 / a ^ 2 + (y - k) ^ 2 / b ^ 2 <= 1
@@ -64,6 +67,24 @@ void CEllipse::Save(ofstream& OutFile)
  }
 void CEllipse::Load(ifstream& OutFile)
 {
+
+	string drwcolor, fillcolor;
+	OutFile >> ID >> TopLeftCorner.x >> TopLeftCorner.y >> low.x >>low.y>> drwcolor >> fillcolor;
+
+	this->Drwcolor = StringToColor(drwcolor);
+	if (fillcolor == "NO-FILL")
+	{
+		this->Isfill = false;
+
+	}
+	else
+	{
+		this->Fillcolor = StringToColor(fillcolor);
+
+
+	}
+	this->Selected = false;
+	setGFX();
 
 }
 

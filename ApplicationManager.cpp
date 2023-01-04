@@ -219,10 +219,10 @@ void ApplicationManager::SaveAll(ofstream& outputfile)
 
 
 }
-	}
+	
 
 
-}
+
 //==================================================================================//
 //							Resize section 							//
 //==================================================================================//
@@ -264,7 +264,8 @@ void ApplicationManager::ClearFigList()
 {
 	for (int i = 0; i < MaxFigCount; i++)
 		FigList[i] = NULL;
-	    FigCount = 0;
+	FigCount = 0;
+}
 int ApplicationManager::getSelectedFigure()
 {
 

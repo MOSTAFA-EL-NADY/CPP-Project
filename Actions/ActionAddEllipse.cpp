@@ -42,8 +42,9 @@ void ActionAddEllipse::Execute()
 	pGUI->GetPointClicked(P2.x, P2.y);
 
 	pGUI->ClearStatusBar();
+//	int drowareastatusbar= UI.ToolBarHeight+UI.
 
-	if (P1.y <= UI.ToolBarHeight || P2.y <= UI.ToolBarHeight)
+	if (P1.y <= UI.ToolBarHeight || P2.y <= UI.ToolBarHeight || P1.y >= UI.width-UI.StatusBarHeight || P2.y >= UI.width - UI.StatusBarHeight)
 	{
 		pGUI->PrintMessage("out drow area  ");
 	}

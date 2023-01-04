@@ -42,7 +42,7 @@ void ActionAddSquare::Execute()
 	pGUI->PrintMessage("New Square: Click at second point");
 	//Read 2nd point and store in point P2
 	pGUI->GetPointClicked(P2.x, P2.y);
-	if (P1.y <= UI.ToolBarHeight || P2.y <= UI.ToolBarHeight)
+	if (P1.y <= UI.ToolBarHeight || P2.y <= UI.ToolBarHeight || P1.y >= UI.width - UI.StatusBarHeight || P2.y >= UI.width - UI.StatusBarHeight)
 	{
 		pGUI->PrintMessage("out drow area  ");
 	}
