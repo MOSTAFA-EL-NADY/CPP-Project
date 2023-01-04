@@ -58,6 +58,7 @@ void ActionFillColor::Execute() {
 		{
 			pGUI->PrintMessage("the fill color set to default");
 			pGUI->isfilled = false;
+			pGUI->setFillcolor(UI.BkGrndColor);
 			pManager->fillSelectedFig(UI.BkGrndColor);
 
 		}

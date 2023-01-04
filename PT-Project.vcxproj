@@ -129,6 +129,7 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ActionDelete.cpp" />
     <ClCompile Include="Actions\ActionAddEllipse.cpp" />
     <ClCompile Include="Actions\ActionAddHex.cpp" />
     <ClCompile Include="Actions\ActionChngBgColor.cpp" />
@@ -184,6 +185,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ActionDelete.h" />
     <ClInclude Include="Actions\ActionAddEllipse.h" />
     <ClInclude Include="Actions\ActionAddHex.h" />
     <ClInclude Include="Actions\ActionChngBgColor.h" />

@@ -40,9 +40,11 @@ public:
 	GUI *GetGUI() const; //Return pointer to the interface
 	CFigure** getFigList();
 	int getFigCount();
+	int* getFigsCount();
 	void UpdateInterface() const;	//Redraws all the drawing window	
 
 	void fillSelectedFig(color c);
+	void coloredSelectedFig(color c);
 	void SaveAll(ofstream& outputfile);
 	void Save_load();
 	void ClearFigList();

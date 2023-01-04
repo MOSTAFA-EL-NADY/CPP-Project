@@ -18,7 +18,7 @@ GUI::GUI()
 	UI.ToolBarHeight = 50;
 	UI.MenuItemWidth = 80;
 	
-	UI.DrawColor = BLUE;	//Drawing color
+	UI.DrawColor = GRAY;	//Drawing color
 	UI.FillColor = GREEN;	//Filling color
 	UI.MsgColor = RED;		//Messages color
 	UI.BkGrndColor = LIGHTGOLDENRODYELLOW;	//Background color
@@ -104,6 +104,7 @@ ActionType GUI::MapInputToActionType() const
 			case ITM_SAVE:return SAVE;
 			case ITM_LOAD:return LOAD;
 			case ITM_RESIZE: return RESIZE;
+			case ITM_DELETE: return DEL;
  			case ITM_EXIT: return EXIT;	
 			
 			
@@ -211,6 +212,7 @@ void GUI::CreateDrawToolBar() const
 	MenuItemImages[ITM_SAVE] = "images\\MenuItems\\save.jpg";
 	MenuItemImages[ITM_LOAD] = "images\\MenuItems\\load.jpg";
 	MenuItemImages[ITM_RESIZE] = "images\\MenuItems\\resize.jpg";
+	MenuItemImages[ITM_DELETE] = "images\\MenuItems\\delete.jpg";
 
 	
 	//TODO: Prepare images for each menu item and add it to the list

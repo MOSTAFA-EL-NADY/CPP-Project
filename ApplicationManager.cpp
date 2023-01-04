@@ -7,6 +7,7 @@
 #include "Actions/ActionDrawColor.h"
 #include "Actions/ActionSelect.h"
 #include"Actions/ActionResize.h"
+#include "ActionDelete.h"
 #include "Actions\ActionSwitchToDrawMode.h"
 #include"Actions/ActionSave.h"
 #include"Actions/ActionLoad.h"
@@ -100,7 +101,9 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 		case GO_BACK:
 			newAct = new ActionSwitchToDrawMode(this);
 			break;
-
+		case DEL:
+			newAct = new ActionDelete(this);
+			break;
 		
 		case EXIT:
 			break;
@@ -185,6 +188,9 @@ int ApplicationManager::getFigCount()
 {
 	return FigCount;
 }
+int* ApplicationManager::getFigsCount() {
+	return &FigCount;
+}
 
 void ApplicationManager::fillSelectedFig(color c)
 {
@@ -204,7 +210,19 @@ void ApplicationManager::fillSelectedFig(color c)
 	}
 	UpdateInterface();
 }
+void ApplicationManager::coloredSelectedFig(color c) {
+	CFigure** figList = getFigList();
+	int figCount = getFigCount();
+	for (int i = 0; i < figCount; i++)
+	{
+		if (FigList[i]->IsSelected())
+		{
+			figList[i]->ChngDrawClr(c);
+		}
+	}
+	UpdateInterface();
 
+}
 void ApplicationManager::SaveAll(ofstream& outputfile)
 {
 	if (outputfile.is_open())
@@ -216,13 +234,8 @@ void ApplicationManager::SaveAll(ofstream& outputfile)
 			FigList[i]->Save(outputfile);
 		}
 	}
-
-
 }
-	}
 
-
-}
 //==================================================================================//
 //							Resize section 							//
 //==================================================================================//
@@ -252,7 +265,7 @@ void ApplicationManager::Save_load()
 			pGUI->ClearDrawArea();
 		}
 
-	}
+}
 	
 	
 	
@@ -263,8 +276,9 @@ void ApplicationManager::Save_load()
 void ApplicationManager::ClearFigList()
 {
 	for (int i = 0; i < MaxFigCount; i++)
-		FigList[i] = NULL;
-	    FigCount = 0;
+	FigList[i] = NULL;
+	FigCount = 0;
+}
 int ApplicationManager::getSelectedFigure()
 {
 
