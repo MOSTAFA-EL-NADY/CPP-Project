@@ -12,10 +12,12 @@ private:
 public:
 	//CSquare();
 	CSquare(Point , int, GfxInfo FigureGfxInfo );
+	CSquare();
 	virtual void DrawMe(GUI* pOut) const;
 	virtual bool Get(int x, int y) const;
 	virtual string ShowFigureDetails() const;
 	virtual void Save(ofstream& OutFile);
+	virtual void Load(ifstream& OutFile);
 };
 
 #endif

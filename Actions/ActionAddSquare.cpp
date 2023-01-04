@@ -16,11 +16,15 @@ void ActionAddSquare::Execute()
 	//Get a Pointer to the Interface
 	GUI* pGUI = pManager->GetGUI();
 	GfxInfo SqrGfxInfo;
+	// fill colors for project
 	if(pGUI->isfilled)
 		SqrGfxInfo.isFilled = true;
 	else
-
-	SqrGfxInfo.isFilled = false;
+	{
+		SqrGfxInfo.isFilled = false;
+		
+	}
+	
 	
 	
 	//get drawing, filling colors and pen width from the interface

@@ -65,3 +65,7 @@ void CHex::Save(ofstream& OutFile)
 	}
 
  }
+void CHex::Load(ifstream& OutFile)
+{
+
+}

@@ -159,6 +159,7 @@
       <Filter>Action Classes</Filter>
     </ClCompile>
     <ClCompile Include="Actions\ActionSave.cpp" />
+    <ClCompile Include="Actions\ActionLoad.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h">
@@ -260,5 +261,6 @@
       <Filter>Action Classes</Filter>
     </ClInclude>
     <ClInclude Include="Actions\ActionSave.h" />
+    <ClInclude Include="Actions\ActionLoad.h" />
   </ItemGroup>
 </Project>

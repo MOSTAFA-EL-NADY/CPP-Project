@@ -36,8 +36,17 @@ color CFigure::GetCurrentDrawClr() {
 	return FigGfxInfo.DrawClr;
 }
 
-string CFigure::ColorToString(color c)
+void  CFigure::setGFX()
 {
+	this->FigGfxInfo.DrawClr = this->Drwcolor;
+	this->FigGfxInfo.FillClr = this->Fillcolor;
+	this->FigGfxInfo.isFilled = this->Isfill;
+	
+}
+
+string CFigure::ColorToString(color c)const
+{
+	
 	
 	if ((c.ucBlue == BLACK.ucBlue) && (c.ucGreen == BLACK.ucGreen) && (c.ucRed == BLACK.ucRed))
 		return "BLACK";
@@ -64,8 +73,39 @@ string CFigure::ColorToString(color c)
 	if ((c.ucBlue == IVORY.ucBlue) && (c.ucGreen == IVORY.ucGreen) && (c.ucRed == IVORY.ucRed))
 		return"IVORY";
 	return "NO-FILL";
+	
 
 
 
 
+
+}
+color CFigure::StringToColor(string s) {
+	if (s == "BLACK")
+		return BLACK;
+	if (s == "BLUE")
+		return BLUE;
+	if (s == "WHITE")
+		return WHITE;
+	if (s == "RED")
+		return RED;
+	if (s == "YELLOW")
+		return YELLOW;
+	if (s == "GREEN")
+		return GREEN;
+	if (s == "LIGHTGOLDENRODYELLOW")
+		return LIGHTGOLDENRODYELLOW;
+	if (s == "MAGENTA")
+		return MAGENTA;
+	if (s == "TURQUOISE")
+		return TURQUOISE;
+	if (s == "SKYBLUE")
+		return SKYBLUE;
+	if (s == "LIGHTSTEELBLUE")
+		return LIGHTSTEELBLUE;
+	if (s == "IVORY")
+		return IVORY;
+	if (s == "HONEYDEW")
+		return HONEYDEW;
+	return BLACK;
 }

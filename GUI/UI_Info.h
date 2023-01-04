@@ -20,10 +20,11 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 	ITM_SQUR,		//Square item in menu
 	ITM_ELPS,		//Ellipse item in menu
 	ITM_HEX,
-	ITM_SAVE,
 	ITM_FILLCOLOR,
 	ITM_DRAWCOLOR,
 	ITM_CHNGBGCOLOR,
+	ITM_SAVE,
+	ITM_LOAD,
 	ITM_EXIT,		//Exit item
 	
 	DRAW_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum

@@ -12,7 +12,9 @@ int main()
 	int x, y;
 	w->WaitMouseClick(x, y);
 	*/
+
 	ApplicationManager AppManager;
+
 	AppManager.Run();		
 	return 0;
 }

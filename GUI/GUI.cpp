@@ -101,6 +101,7 @@ ActionType GUI::MapInputToActionType() const
 			case ITM_DRAWCOLOR: return CHNG_DRAW_CLR;
 			case ITM_CHNGBGCOLOR: return CHNG_BK_CLR;
 			case ITM_SAVE:return SAVE;
+			case ITM_LOAD:return LOAD;
  			case ITM_EXIT: return EXIT;	
 			
 			
@@ -173,6 +174,7 @@ void GUI::CreateDrawToolBar() const
 	MenuItemImages[ITM_DRAWCOLOR] = "images\\MenuItems\\colorpallette.jpg";
 	MenuItemImages[ITM_CHNGBGCOLOR] = "images\\MenuItems\\bgcolor.jpg";
 	MenuItemImages[ITM_SAVE] = "images\\MenuItems\\save.jpg";
+	MenuItemImages[ITM_LOAD] = "images\\MenuItems\\load.jpg";
 
 	
 	//TODO: Prepare images for each menu item and add it to the list
@@ -293,7 +295,7 @@ void GUI::DrawSquare(Point P1, int length, GfxInfo RectGfxInfo, bool selected) c
 	else			
 		DrawingClr = RectGfxInfo.DrawClr;
 	
-	pWind->SetPen(DrawingClr, RectGfxInfo.BorderWdth);	//Set Drawing color & width
+	pWind->SetPen(DrawingClr, 3);	//Set Drawing color & width
 	
 	drawstyle style;
 	if (RectGfxInfo.isFilled)	
@@ -348,7 +350,7 @@ void GUI::DrawHex(Point TopLeft, int Llen, int Rlen, GfxInfo RectGfxInfo, bool s
 	else
 		DrawingClr = RectGfxInfo.DrawClr;
 
-	pWind->SetPen(DrawingClr, RectGfxInfo.BorderWdth);	//Set Drawing color & width
+	pWind->SetPen(DrawingClr, 3);	//Set Drawing color & width
 
 	drawstyle style;
 	if (RectGfxInfo.isFilled)

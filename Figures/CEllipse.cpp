@@ -62,5 +62,9 @@ void CEllipse::Save(ofstream& OutFile)
 
 	}
  }
+void CEllipse::Load(ifstream& OutFile)
+{
+
+}
 
 

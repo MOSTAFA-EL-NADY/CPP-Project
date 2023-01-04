@@ -44,6 +44,8 @@ public:
 
 	void fillSelectedFig(color c);
 	void SaveAll(ofstream& outputfile);
+	void Save_load();
+	void ClearFigList();
 };
 
 #endif

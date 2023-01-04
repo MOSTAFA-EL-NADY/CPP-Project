@@ -7,6 +7,7 @@
 #include "Actions/ActionDrawColor.h"
 #include "Actions/ActionSelect.h"
 #include"Actions/ActionSave.h"
+#include"Actions/ActionLoad.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -84,9 +85,12 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 		case SAVE:
 			newAct = new ActionSave(this);
 			break;
+		
+		case LOAD:
+			newAct = new ActionLoad(this);
+						
+			break;
 		case EXIT:
-			///create ExitAction here
-			
 			break;
 		
 		case STATUS:	//a click on the status bar ==> no action
@@ -134,7 +138,7 @@ CFigure *ApplicationManager::GetFigure(int x, int y) const
 			return FigList[i];
 	return NULL;
 
-	return NULL;
+	
 }
 //////////////////////////////////////////////////////////////////
 CFigure* ApplicationManager::GetSelectedFigure() const
@@ -201,6 +205,47 @@ void ApplicationManager::SaveAll(ofstream& outputfile)
 		}
 	}
 
+
+}
+
+// handle load action
+
+void ApplicationManager::Save_load()
+{
+		 
+	
+		pGUI->PrintMessage("do you want to save current paint Y/N");
+
+		string confirm = pGUI->GetSrting();
+
+		if (confirm == "y" || confirm == "Y")
+		{
+			Action* act = new ActionSave(this);
+
+			ExecuteAction(act);
+
+			pGUI->ClearDrawArea();
+
+
+		}
+		else
+		{
+			pGUI->ClearDrawArea();
+		}
+
+	}
+	
+	
+	
+
+ 
+
+
+void ApplicationManager::ClearFigList()
+{
+	for (int i = 0; i < MaxFigCount; i++)
+		FigList[i] = NULL;
+	    FigCount = 0;
 
 }
 ////////////////////////////////////////////////////////////////////////////////////

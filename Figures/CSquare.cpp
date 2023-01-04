@@ -11,6 +11,7 @@ CSquare::CSquare(Point P1, int len, GfxInfo FigureGfxInfo):CFigure(FigureGfxInfo
 	Center.y = (P1.y + (P1.y + length)) / 2;
 	
 }
+CSquare::CSquare() {};
 	
 
 void CSquare::DrawMe(GUI* pGUI) const
@@ -48,11 +49,38 @@ void CSquare::Save(ofstream& OutFile)
 			<< "\t" << TopLeftCorner.x
 			<< "\t" << TopLeftCorner.y
 			<< "\t" << length
-			<< "\t\t" << ColorToString(this->FigGfxInfo.DrawClr);
+			<< "\t" << ColorToString(this->FigGfxInfo.DrawClr);
 		if (!this->FigGfxInfo.isFilled)
 			OutFile << "\t" << "NO-FILL";
 		else
+
 			OutFile << "\t" << ColorToString(this->FigGfxInfo.FillClr);
 		OutFile << "\n";
 	}
+}
+void CSquare::Load(ifstream& OutFile)
+{
+
+	string drwcolor, fillcolor;
+	OutFile >> ID >> TopLeftCorner.x >> TopLeftCorner.y >> length >> drwcolor >> fillcolor;
+	
+	this->Drwcolor = StringToColor(drwcolor);
+	if (fillcolor == "NO-FILL")
+	{
+		this->Isfill =false;
+		
+	}
+	else
+	{
+		this->Fillcolor = StringToColor(fillcolor);
+
+			
+	}
+	this->Selected = false;
+	setGFX();
+	
+	
+	
+		
+	
 }
