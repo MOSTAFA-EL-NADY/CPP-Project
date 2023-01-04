@@ -12,6 +12,7 @@ enum ActionType //The actions supported (you can add more if needed)
 	CHNG_DRAW_CLR,	//Change the drawing color
 	CHNG_FILL_CLR,	//Change the filling color
 	CHNG_BK_CLR,	//Change background color
+	GO_BACK,		  //send to back and switch back to draw mode
 	DEL,			//Delete a figure(s)
 	MOVE,			//Move a figure(s)
 	RESIZE,			//Resize a figure(s)
@@ -27,8 +28,15 @@ enum ActionType //The actions supported (you can add more if needed)
 	EMPTY,			//A click on empty place in the toolbar
 
 	TO_DRAW,		//Switch interface to Draw mode
-	TO_PLAY			//Switch interface to Play mode
+	TO_PLAY,			//Switch interface to Play mode
 
+	////// Actions of Size mode //////
+	TO_SIZE,
+	HALF,
+	QUARTER,
+	DOUBLE1,
+	QUADRUPLE,
+	BACK2
 	///TODO: Add more action types (if needed)
 };
 

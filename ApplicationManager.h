@@ -3,7 +3,7 @@
 
 #include "DEFS.h"
 #include "Figures\CFigure.h"
-
+#include <fstream>
 class Action;	//Forward Declaration
 
 
@@ -46,6 +46,8 @@ public:
 	void SaveAll(ofstream& outputfile);
 	void Save_load();
 	void ClearFigList();
+
+	int getSelectedFigure(); //to get selected figure to resize
 };
 
 #endif

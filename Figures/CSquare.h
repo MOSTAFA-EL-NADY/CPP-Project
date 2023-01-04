@@ -18,6 +18,7 @@ public:
 	virtual string ShowFigureDetails() const;
 	virtual void Save(ofstream& OutFile);
 	virtual void Load(ifstream& OutFile);
+	virtual void Resize(float);
 };
 
 #endif

@@ -19,5 +19,6 @@ public:
 	virtual bool Get(int x, int y) const;
 	virtual void Save(ofstream& OutFile);
 	virtual void Load(ifstream& OutFile);
+	virtual void Resize(float);
 };
 

@@ -65,6 +65,12 @@ void CHex::Save(ofstream& OutFile)
 	}
 
  }
+
+void CHex::Resize(float size) {
+	this->Llen = this->Llen * size;
+	this->Rlen = this->Rlen * size;
+
+}
 void CHex::Load(ifstream& OutFile)
 {
 
