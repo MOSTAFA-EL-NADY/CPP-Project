@@ -21,40 +21,27 @@ void ActionChngBgColor::Execute()
 	COLORSITEM s = pGUI->getcolor();
 	if (s != EMPTYY)
 	{
-		//CFigure *c;
+		
 		switch (s)
 		{
 		case RED1: {
 			pGUI->PrintMessage("the Background color set to RED");
 			pGUI->SetBgColor(RED);
-			pGUI->ClearDrawArea();
-			pManager->UpdateInterface();
-			UI.InterfaceMode = MODE_DRAW;
-			pGUI->CreateDrawToolBar();
-
-			break;
+		   break;
 		}
 
 		case GREEN2:
 		{
 			pGUI->PrintMessage("the Background color set to GREEN");
 			pGUI->SetBgColor(GREEN);
-			pGUI->ClearDrawArea();
-			pManager->UpdateInterface();
-			UI.InterfaceMode = MODE_DRAW;
-			pGUI->CreateDrawToolBar();
-
+		
 			break;
 		}
 		case YELLOW3:
 		{
 			pGUI->PrintMessage("the Background color set to YELLOW");
 			pGUI->SetBgColor(YELLOW);
-			pGUI->ClearDrawArea();
-			pManager->UpdateInterface();
-			UI.InterfaceMode = MODE_DRAW;
-			pGUI->CreateDrawToolBar();
-
+			
 			break;
 
 		}
@@ -62,25 +49,12 @@ void ActionChngBgColor::Execute()
 		{
 			pGUI->PrintMessage("the Background color set to BLUE");
 			pGUI->SetBgColor(BLUE);
-			pGUI->ClearDrawArea();
-			pManager->UpdateInterface();
-			UI.InterfaceMode = MODE_DRAW;
-			pGUI->CreateDrawToolBar();
-
 			break;
 		}
 		case defaultcolor:
 		{
 			pGUI->PrintMessage("the draw Background set to default");
 			pGUI->SetBgColor(LIGHTGOLDENRODYELLOW);
-			pGUI->ClearDrawArea();
-			pManager->UpdateInterface();
-			UI.InterfaceMode = MODE_DRAW;
-			pGUI->CreateDrawToolBar();
-			pGUI->isDrawed = false;
-			pGUI->SetBgColor(LIGHTGOLDENRODYELLOW);
-			pGUI->ClearDrawArea();
-			pManager->UpdateInterface();
 			break;
 
 		}
@@ -90,6 +64,10 @@ void ActionChngBgColor::Execute()
 		default:
 			break;
 		}
+		pGUI->ClearDrawArea();
 		pGUI->ClearColorMenu();
+		UI.InterfaceMode = MODE_DRAW;
+		pManager->UpdateInterface();
+		
 	}
 }

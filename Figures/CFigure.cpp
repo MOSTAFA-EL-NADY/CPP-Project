@@ -41,7 +41,7 @@ void  CFigure::setGFX()
 	this->FigGfxInfo.DrawClr = this->Drwcolor;
 	this->FigGfxInfo.FillClr = this->Fillcolor;
 	this->FigGfxInfo.isFilled = this->Isfill;
-	
+	this->FigGfxInfo.BorderWdth = 3;
 }
 
 string CFigure::ColorToString(color c)const

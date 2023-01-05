@@ -14,6 +14,8 @@ public:
 
 	CHex(Point,int,int, GfxInfo GfxInfo);
 
+	CHex();
+
 	virtual void DrawMe(GUI* pOut) const;
 	virtual string ShowFigureDetails() const;
 	virtual bool Get(int x, int y) const;

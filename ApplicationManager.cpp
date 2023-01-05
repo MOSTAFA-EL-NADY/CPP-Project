@@ -230,7 +230,7 @@ void ApplicationManager::drwSelectedFig(color c)
 	UpdateInterface();
 }
 
-}
+
 void ApplicationManager::SaveAll(ofstream& outputfile)
 {
 	if (outputfile.is_open())
