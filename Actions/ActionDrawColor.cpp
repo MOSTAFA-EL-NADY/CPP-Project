@@ -20,25 +20,31 @@ void ActionDrawColor::Execute() {
 	COLORSITEM s = pGUI->getcolor();
 	if (s != EMPTYY)
 	{
-		//CFigure *c;
 		switch (s)
 		{
 		case RED1: {
 			pGUI->PrintMessage("the draw color set to RED");
 			pGUI->isDrawed = true;
 			pGUI->SetDrawColor(RED);
+			pManager->coloredSelectedFig(RED);
+
 			pManager->drwSelectedFig(RED);
 			break;
 		}
+		break;
 
 		case GREEN2:
 		{
 			pGUI->PrintMessage("the draw color set to green");
 			pGUI->isDrawed = true;
 			pGUI->SetDrawColor(GREEN);
+			pManager->coloredSelectedFig(GREEN);
+
 			pManager->drwSelectedFig(GREEN);
 			break;
 		}
+		break;
+
 		case YELLOW3:
 		{
 			pGUI->PrintMessage("the draw color set to YELLOW");
@@ -50,12 +56,17 @@ void ActionDrawColor::Execute() {
 		case defaultcolor:
 		{
 			pGUI->PrintMessage("the draw color set to default");
+			pGUI->SetDrawColor(GREY);
+			pManager->coloredSelectedFig(GRAY);
 			pGUI->isDrawed = false;
-			break;
 		}
+		break;
 		case BLUE5:
 		{
 			pGUI->PrintMessage("the draw color set to BLUE");
+			pGUI->SetDrawColor(BLUE);
+			pManager->coloredSelectedFig(BLUE);
+
 			pGUI->isDrawed = true;
 			pGUI->SetDrawColor(BLUE);
 			pManager->drwSelectedFig(BLUE);

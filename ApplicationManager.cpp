@@ -7,6 +7,7 @@
 #include "Actions/ActionDrawColor.h"
 #include "Actions/ActionSelect.h"
 #include"Actions/ActionResize.h"
+#include "ActionDelete.h"
 #include "Actions\ActionSwitchToDrawMode.h"
 #include"Actions/ActionSave.h"
 #include"Actions/ActionLoad.h"
@@ -100,7 +101,9 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 		case GO_BACK:
 			newAct = new ActionSwitchToDrawMode(this);
 			break;
-
+		case DEL:
+			newAct = new ActionDelete(this);
+			break;
 		
 		case EXIT:
 			break;
@@ -185,6 +188,9 @@ int ApplicationManager::getFigCount()
 {
 	return FigCount;
 }
+int* ApplicationManager::getFigsCount() {
+	return &FigCount;
+}
 
 void ApplicationManager::fillSelectedFig(color c)
 {
@@ -224,6 +230,7 @@ void ApplicationManager::drwSelectedFig(color c)
 	UpdateInterface();
 }
 
+}
 void ApplicationManager::SaveAll(ofstream& outputfile)
 {
 	if (outputfile.is_open())
@@ -271,7 +278,7 @@ void ApplicationManager::Save_load()
 			pGUI->ClearDrawArea();
 		}
 
-	}
+}
 	
 	
 	

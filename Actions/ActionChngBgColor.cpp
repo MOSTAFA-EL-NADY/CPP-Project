@@ -72,6 +72,11 @@ void ActionChngBgColor::Execute()
 		case defaultcolor:
 		{
 			pGUI->PrintMessage("the draw Background set to default");
+			pGUI->SetBgColor(LIGHTGOLDENRODYELLOW);
+			pGUI->ClearDrawArea();
+			pManager->UpdateInterface();
+			UI.InterfaceMode = MODE_DRAW;
+			pGUI->CreateDrawToolBar();
 			pGUI->isDrawed = false;
 			pGUI->SetBgColor(LIGHTGOLDENRODYELLOW);
 			pGUI->ClearDrawArea();

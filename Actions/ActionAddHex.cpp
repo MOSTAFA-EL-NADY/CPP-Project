@@ -51,7 +51,7 @@ void ActionAddHex::Execute()
 		pGUI->ClearStatusBar();
 
 
-		if (P1.y <= UI.ToolBarHeight || P2.y <= UI.ToolBarHeight || P1.y >= UI.width - UI.StatusBarHeight || P2.y >= UI.width - UI.StatusBarHeight)
+		if (P1.y < UI.ToolBarHeight || P2.y < UI.ToolBarHeight || P1.y>(UI.height - UI.StatusBarHeight) || P2.y>(UI.height - UI.StatusBarHeight))
 		{
 			pGUI->PrintMessage("draw inside drawing area");
 		}

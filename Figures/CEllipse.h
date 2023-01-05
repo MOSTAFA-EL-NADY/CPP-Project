@@ -14,7 +14,6 @@ private:
 public:
 	//CEllipse();
 	CEllipse(Point, Point, GfxInfo FigureGfxInfo);
-	CEllipse();
 	virtual bool Get(int x, int y) const;
 	virtual string ShowFigureDetails() const;
 	virtual void DrawMe(GUI* pOut) const;

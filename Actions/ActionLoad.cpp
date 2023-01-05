@@ -35,7 +35,7 @@ void ActionLoad::Execute()
 		pManager->Save_load();
 	}
 	
-	
+
 	
 	
 
@@ -77,11 +77,11 @@ void ActionLoad::Execute()
 					if (shapename == "SQUARE") {
 						figure = new CSquare;
 					}
-					else if (shapename == "HEXAGON") {
-						figure = new CHex();
+					else if (shapename == "HEX") {
+						//figure = new CHex();
 					}
-					else if (shapename == "Ellips") {
-						figure = new CEllipse();
+					else if (shapename == "ELLIPSE") {
+						//figure = new CEllipse();
 					}
 
 					figure->Load(loadedfile);

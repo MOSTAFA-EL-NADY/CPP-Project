@@ -12,7 +12,6 @@ CHex::CHex(Point p1,int len,int rlen, GfxInfo FigureGfxInfo) :CFigure(FigureGfxI
 	
 
 }
-CHex::CHex(){}
 
 bool CHex::Get(int x, int y) const
 {
@@ -75,21 +74,4 @@ void CHex::Resize(float size) {
 void CHex::Load(ifstream& OutFile)
 {
 
-	string drwcolor, fillcolor;
-	OutFile >> ID >> TopLeft.x >> TopLeft.y >> Llen >>Rlen >>drwcolor >> fillcolor;
-
-	this->Drwcolor = StringToColor(drwcolor);
-	if (fillcolor == "NO-FILL")
-	{
-		this->Isfill = false;
-
-	}
-	else
-	{
-		this->Fillcolor = StringToColor(fillcolor);
-
-
-	}
-	this->Selected = false;
-	setGFX();
 }
