@@ -43,6 +43,7 @@ public:
 	void UpdateInterface() const;	//Redraws all the drawing window	
 
 	void fillSelectedFig(color c);
+	void drwSelectedFig(color c);
 	void SaveAll(ofstream& outputfile);
 	void Save_load();
 	void ClearFigList();

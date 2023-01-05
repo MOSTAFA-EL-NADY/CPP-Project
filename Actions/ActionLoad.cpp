@@ -39,7 +39,7 @@ void ActionLoad::Execute()
 	
 	
 
-	CFigure* fig;
+
 	int figCount = 0;
 	ifstream loadedfile;
 	string Drwcolor, bgroundcolor, fillcolor, shapename;
@@ -56,7 +56,7 @@ void ActionLoad::Execute()
 
 		if (loadedfile.fail())
 		{
-			pGui->PrintMessage("invalid file name");
+			pGui->PrintMessage(" file name NOT Exist");
 			
 		}
 		else

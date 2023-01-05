@@ -269,6 +269,7 @@ void GUI::CreateColorMenu()const
 	MenuItemcolors[ITM_defaultclr] = "images\\MenuItems\\x.jpg";
 	
 	
+	
 
 	int ix = UI.MenuItemWidth *(COLOR_COUNT /2)+15;
 	

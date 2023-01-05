@@ -204,6 +204,25 @@ void ApplicationManager::fillSelectedFig(color c)
 	}
 	UpdateInterface();
 }
+void ApplicationManager::drwSelectedFig(color c)
+{
+
+
+	CFigure** list = getFigList();
+	int figCount = getFigCount();
+	for (int i = 0; i < figCount; i++)
+	{
+		if (list[i]->IsSelected())
+		{
+			list[i]->ChngDrawClr(c);
+			list[i]->SetSelected(false);
+
+		}
+
+
+	}
+	UpdateInterface();
+}
 
 void ApplicationManager::SaveAll(ofstream& outputfile)
 {
@@ -264,7 +283,7 @@ void ApplicationManager::ClearFigList()
 {
 	for (int i = 0; i < MaxFigCount; i++)
 		FigList[i] = NULL;
-	FigCount = 0;
+	    FigCount = 0;
 }
 int ApplicationManager::getSelectedFigure()
 {

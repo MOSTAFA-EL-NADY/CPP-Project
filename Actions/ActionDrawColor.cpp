@@ -27,6 +27,7 @@ void ActionDrawColor::Execute() {
 			pGUI->PrintMessage("the draw color set to RED");
 			pGUI->isDrawed = true;
 			pGUI->SetDrawColor(RED);
+			pManager->drwSelectedFig(RED);
 			break;
 		}
 
@@ -35,6 +36,7 @@ void ActionDrawColor::Execute() {
 			pGUI->PrintMessage("the draw color set to green");
 			pGUI->isDrawed = true;
 			pGUI->SetDrawColor(GREEN);
+			pManager->drwSelectedFig(GREEN);
 			break;
 		}
 		case YELLOW3:
@@ -42,6 +44,7 @@ void ActionDrawColor::Execute() {
 			pGUI->PrintMessage("the draw color set to YELLOW");
 			pGUI->isDrawed = true;
 			pGUI->SetDrawColor(YELLOW);
+			pManager->drwSelectedFig(YELLOW);
 			break;
 		}
 		case defaultcolor:
@@ -55,6 +58,7 @@ void ActionDrawColor::Execute() {
 			pGUI->PrintMessage("the draw color set to BLUE");
 			pGUI->isDrawed = true;
 			pGUI->SetDrawColor(BLUE);
+			pManager->drwSelectedFig(BLUE);
 			break;
 		}
 		case EMPTYY:
@@ -63,6 +67,7 @@ void ActionDrawColor::Execute() {
 			break;
 		}
 		pGUI->ClearColorMenu();
+
 	}
 
 }

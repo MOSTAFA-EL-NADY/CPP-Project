@@ -73,7 +73,11 @@ void ActionChngBgColor::Execute()
 		{
 			pGUI->PrintMessage("the draw Background set to default");
 			pGUI->isDrawed = false;
+			pGUI->SetBgColor(LIGHTGOLDENRODYELLOW);
+			pGUI->ClearDrawArea();
+			pManager->UpdateInterface();
 			break;
+
 		}
 
 		case EMPTYY:
