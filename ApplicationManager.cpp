@@ -14,6 +14,7 @@
 #include"Actions/ActionLoad.h"
 #include "Actions/ActionToPlay.h"
 #include "Actions/ActionBackToDraw.h"
+#include "Actions/ActionSwitchToDrawMode.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -110,7 +111,7 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 			break;
 
 		case GO_BACK:
-			newAct = new ActionSwitchToDrawMode(this);
+			newAct = new ActionBackToDraw(this);
 			break;
 		case DEL:
 			newAct = new ActionDelete(this);
@@ -119,7 +120,7 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 			newAct = new ActionToPlay(this);
 			break;
 		case TO_DRAW:
-			newAct = new ActionBackToDraw(this);
+			newAct = new ActionSwitchToDrawMode(this);
 			break;
 
 		case EXIT:

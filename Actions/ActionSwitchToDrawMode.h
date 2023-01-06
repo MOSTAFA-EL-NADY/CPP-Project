@@ -1,5 +1,4 @@
-#ifndef ACTION_SWITCH_TO_DRAW_MODE_H
-#define ACTION_SWITCH_TO_DRAW_MODE_H
+
 
 #include "Action.h"
 
@@ -12,6 +11,4 @@ public:
 	virtual void Execute();
 
 };
-
-#endif
 

@@ -170,6 +170,11 @@
     <ClCompile Include="Actions\ActionBackToDraw.cpp">
       <Filter>Action Classes</Filter>
     </ClCompile>
+    <ClCompile Include="Actions\ActionBringFront.cpp" />
+    <ClCompile Include="Actions\ActionSendBack.cpp" />
+    <ClCompile Include="Actions\ActionSwitchToDrawMode.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h">
@@ -276,13 +281,7 @@
     <ClInclude Include="ActionDelete.h">
       <Filter>Action Classes</Filter>
     </ClInclude>
-    <ClInclude Include="Actions\ActionToPlay.h">
-      <Filter>Action Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="Actions\ActionBackToDraw.h">
-      <Filter>Action Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="ActionToDraw.h">
+    <ClInclude Include="Actions\ActionSwitchToDrawMode.h">
       <Filter>Action Classes</Filter>
     </ClInclude>
   </ItemGroup>
