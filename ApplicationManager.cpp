@@ -7,6 +7,8 @@
 #include "Actions/ActionDrawColor.h"
 #include "Actions/ActionSelect.h"
 #include"Actions/ActionResize.h"
+#include "Actions\ActionSendBack.h"
+#include "Actions\ActionBringFront.h"
 #include "ActionDelete.h"
 #include"Actions/ActionSave.h"
 #include"Actions/ActionLoad.h"
@@ -97,6 +99,18 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 
 		case RESIZE:
 			newAct = new ActionResize(this, SelectedFig);
+			break;
+
+		case BRNG_FRNT:
+			newAct = new ActionBringFront(this);
+			break;
+
+		case SEND_BACK:
+			newAct = new ActionSendBack(this);
+			break;
+
+		case GO_BACK:
+			newAct = new ActionSwitchToDrawMode(this);
 			break;
 		case DEL:
 			newAct = new ActionDelete(this);
@@ -248,8 +262,41 @@ void ApplicationManager::SaveAll(ofstream& outputfile)
 
 
 }
-	
 
+//==================================================================================//
+//							Bring To Front											//
+//==================================================================================//
+
+void ApplicationManager::BringToFront(int selectedIndex)
+{
+	if (selectedIndex != FigCount - 1)
+	{
+		for (int i = selectedIndex; i < FigCount - 1; i++)
+		{
+			CFigure* temp = FigList[i];
+			FigList[i] = FigList[i + 1];
+			FigList[i + 1] = temp;
+		}
+
+	}
+}
+
+//==================================================================================//
+//							Send To Back											//
+//==================================================================================//
+
+void ApplicationManager::SendToBack(int selectedIndex)
+{
+	if (selectedIndex != 0)
+	{
+		for (int i = selectedIndex; i > 0; i--)
+		{
+			CFigure* temp = FigList[i];
+			FigList[i] = FigList[i - 1];
+			FigList[i - 1] = temp;
+		}
+	}
+}
 
 
 //==================================================================================//
