@@ -105,6 +105,7 @@ ActionType GUI::MapInputToActionType() const
 			case ITM_LOAD:return LOAD;
 			case ITM_RESIZE: return RESIZE;
 			case ITM_DELETE: return DEL;
+			case ITM_TOPLAY: return TO_PLAY;
  			case ITM_EXIT: return EXIT;	
 			
 			
@@ -142,16 +143,26 @@ ActionType GUI::MapInputToActionType() const
 		}
 	}
 	
-	
-
-/*
 	else	//GUI is in PLAY mode
 	{
 		///TODO:
 		//perform checks similar to Draw mode checks above
 		//and return the correspoding action
+		if (y >= 0 && y < UI.ToolBarHeight)
+		{
+			int ClickedItemOrder = (x / UI.MenuItemWidth);
+			switch (ClickedItemOrder)
+			{
+			case ITM_SHAPE:return P_BY_COLOR;
+			case ITM_COLOR:return P_BY_COLOR;
+			case ITM_SHAPE_COLOR:return P_BY_BOTH;
+			case ITM_DRAW_BACK:return TO_DRAW;
+			default: return EMPTY;
+			}
+		}
+		return TO_PLAY;
 		return TO_PLAY;	//just for now. This should be updated
-	}	*/
+	}	
 
 }
 //======================================================================================//
@@ -213,7 +224,8 @@ void GUI::CreateDrawToolBar() const
 	MenuItemImages[ITM_LOAD] = "images\\MenuItems\\load.jpg";
 	MenuItemImages[ITM_RESIZE] = "images\\MenuItems\\resize.jpg";
 	MenuItemImages[ITM_DELETE] = "images\\MenuItems\\delete.jpg";
-
+	MenuItemImages[ITM_TOPLAY] = "images\\MenuItems\\play.jpg";
+	
 	
 	//TODO: Prepare images for each menu item and add it to the list
 
@@ -292,6 +304,20 @@ void GUI::CreatePlayToolBar() const
 {
 	UI.InterfaceMode = MODE_PLAY;
 	///TODO: write code to create Play mode menu
+	string MenuItemImages[PLAY_ITM_COUNT];
+	MenuItemImages[ITM_SHAPE] = "images\\MenuItems\\shapesss.jpg";
+	MenuItemImages[ITM_COLOR] = "images\\MenuItems\\shapesss.jpg";
+	MenuItemImages[ITM_SHAPE_COLOR] = "images\\MenuItems\\shapes_colors.jpg";
+	MenuItemImages[ITM_DRAW_BACK] = "images\\MenuItems\\back.jpg";
+
+
+	for (int i = 0; i < PLAY_ITM_COUNT; i++)
+		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
+
+	pWind->SetPen(CORNFLOWERBLUE, 3);
+	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
+
+
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 

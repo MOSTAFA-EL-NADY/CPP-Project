@@ -139,7 +139,8 @@
     <ClCompile Include="Actions\ActionResize.cpp" />
     <ClCompile Include="Actions\ActionSave.cpp" />
     <ClCompile Include="Actions\ActionSelect.cpp" />
-    <ClCompile Include="Actions\ActionSwitchToDrawMode.cpp" />
+    <ClCompile Include="Actions\ActioToPlay.cpp" />
+    <ClCompile Include="Actions\ActionBackToDraw.cpp" />
     <ClCompile Include="CMUgraphicsLib\auxil.cpp" />
     <ClCompile Include="CMUgraphicsLib\CMUgraphics.cpp" />
     <ClCompile Include="CMUgraphicsLib\image.cpp" />
@@ -188,6 +189,7 @@
     <ClInclude Include="ActionDelete.h" />
     <ClInclude Include="Actions\ActionAddEllipse.h" />
     <ClInclude Include="Actions\ActionAddHex.h" />
+    <ClInclude Include="Actions\ActionBackToDraw.h" />
     <ClInclude Include="Actions\ActionChngBgColor.h" />
     <ClInclude Include="Actions\ActionDrawColor.h" />
     <ClInclude Include="Actions\ActionFillColor.h" />
@@ -195,7 +197,8 @@
     <ClInclude Include="Actions\ActionResize.h" />
     <ClInclude Include="Actions\ActionSave.h" />
     <ClInclude Include="Actions\ActionSelect.h" />
-    <ClInclude Include="Actions\ActionSwitchToDrawMode.h" />
+    <ClInclude Include="Actions\ActionToPlay.h" />
+    <ClInclude Include="ActionToDraw.h" />
     <ClInclude Include="CMUgraphicsLib\auxil.h" />
     <ClInclude Include="CMUgraphicsLib\CMUgraphics.h" />
     <ClInclude Include="CMUgraphicsLib\colors.h" />

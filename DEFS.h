@@ -28,8 +28,11 @@ enum ActionType //The actions supported (you can add more if needed)
 	EMPTY,			//A click on empty place in the toolbar
 
 	TO_DRAW,		//Switch interface to Draw mode
-	TO_PLAY,			//Switch interface to Play mode
+	TO_PLAY,//Switch interface to Play mode
 
+	P_BY_Shape,
+	P_BY_COLOR,
+	P_BY_BOTH,
 	////// Actions of Size mode //////
 	TO_SIZE,
 	HALF,

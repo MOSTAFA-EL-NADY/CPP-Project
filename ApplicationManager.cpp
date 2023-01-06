@@ -8,9 +8,10 @@
 #include "Actions/ActionSelect.h"
 #include"Actions/ActionResize.h"
 #include "ActionDelete.h"
-#include "Actions\ActionSwitchToDrawMode.h"
 #include"Actions/ActionSave.h"
 #include"Actions/ActionLoad.h"
+#include "Actions/ActionToPlay.h"
+#include "Actions/ActionBackToDraw.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -80,7 +81,7 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 		case CHNG_BK_CLR:
 			newAct = new ActionChngBgColor(this);
 			break;
-		
+	
 		case DRAWING_AREA:
 			newAct = new ActionSelect(this);
 			break;
@@ -97,14 +98,16 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 		case RESIZE:
 			newAct = new ActionResize(this, SelectedFig);
 			break;
-
-		case GO_BACK:
-			newAct = new ActionSwitchToDrawMode(this);
-			break;
 		case DEL:
 			newAct = new ActionDelete(this);
 			break;
-		
+		case TO_PLAY:
+			newAct = new ActionToPlay(this);
+			break;
+		case TO_DRAW:
+			newAct = new ActionBackToDraw(this);
+			break;
+
 		case EXIT:
 			break;
 		
