@@ -322,14 +322,13 @@ void ApplicationManager::Save_load()
 
 			ExecuteAction(act);
 
-			pGUI->ClearDrawArea();
+			
 
 
 		}
-		else
-		{
+		
 			pGUI->ClearDrawArea();
-		}
+		
 
 }
 	
