@@ -217,7 +217,6 @@ void GUI::CreateDrawToolBar() const
 	string MenuItemImages[DRAW_ITM_COUNT];
 	MenuItemImages[ITM_SQUR] = "images\\MenuItems\\Menu_Sqr.jpg";
 	MenuItemImages[ITM_ELPS] = "images\\MenuItems\\Menu_Elps.jpg";
-	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
 	MenuItemImages[ITM_HEX] = "images\\MenuItems\\HEX.jpg";
 	MenuItemImages[ITM_FILLCOLOR] = "images\\MenuItems\\colors.jpg";
 	MenuItemImages[ITM_DRAWCOLOR] = "images\\MenuItems\\colorpallette.jpg";
@@ -229,7 +228,8 @@ void GUI::CreateDrawToolBar() const
 	MenuItemImages[ITM_TO_BACK] = "images\\MenuItems\\sendtoback.jpg";
 	MenuItemImages[ITM_DELETE] = "images\\MenuItems\\delete.jpg";
 	MenuItemImages[ITM_TOPLAY] = "images\\MenuItems\\play.jpg";
-	
+	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
+
 	
 	//TODO: Prepare images for each menu item and add it to the list
 

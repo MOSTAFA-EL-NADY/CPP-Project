@@ -135,6 +135,7 @@
     <ClCompile Include="Actions\ActionBringFront.cpp" />
     <ClCompile Include="Actions\ActionChngBgColor.cpp" />
     <ClCompile Include="Actions\ActionDrawColor.cpp" />
+    <ClCompile Include="Actions\ActionExit.cpp" />
     <ClCompile Include="Actions\ActionFillColor.cpp" />
     <ClCompile Include="Actions\ActionLoad.cpp" />
     <ClCompile Include="Actions\ActionResize.cpp" />
@@ -194,6 +195,7 @@
     <ClInclude Include="Actions\ActionAddHex.h" />
     <ClInclude Include="Actions\ActionChngBgColor.h" />
     <ClInclude Include="Actions\ActionDrawColor.h" />
+    <ClInclude Include="Actions\ActionExit.h" />
     <ClInclude Include="Actions\ActionFillColor.h" />
     <ClInclude Include="Actions\ActionLoad.h" />
     <ClInclude Include="Actions\ActionResize.h" />
