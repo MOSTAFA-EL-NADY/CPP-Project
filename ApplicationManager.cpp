@@ -17,6 +17,7 @@
 #include "Actions/ActionSwitchToDrawMode.h"
 #include "Actions/ActionExit.h"
 #include "Actions/ActionPickByType.h"
+#include "Actions/ActionPickByColor.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -127,7 +128,9 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 		case P_BY_Shape:
 			newAct = new ActionPickByType(this);
 			break;
-
+		case P_BY_COLOR:
+			newAct = new ActionPickByColor(this);
+			break;
 		case EXIT:
 			newAct = new ActionExit(this);
 			break;

@@ -12,10 +12,6 @@ ActionToPlay::ActionToPlay(ApplicationManager* pMan)
 void ActionToPlay::Execute()
 {
 	GUI* pGUI = pManager->GetGUI();
-	if (pManager->getFigCount() > 0)
-	{
-		pManager->Save_load();
-	}
 	
 	UI.InterfaceMode = MODE_PLAY;
 	pGUI->ClearToolBar();

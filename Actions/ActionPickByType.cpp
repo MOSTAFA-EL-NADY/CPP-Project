@@ -29,13 +29,10 @@ void ActionPickByType::PrintScore(int score)
 		numberOfWrongFig++;
 		message = "Wrong!, Your score is: " + to_string(numberOfRightFig) + " Right, and " + to_string(numberOfWrongFig) + " Wrong.";
 	}
-	else if(pickedFigNumber==0 & numberOfRightFig > numberOfWrongFig)
+	else
 	{
-
 		message = "YOU WIN!, Your score is: " + to_string(numberOfRightFig) + " Right, and " + to_string(numberOfWrongFig) + " Wrong.";
 	}
-	else
-		message = "YOU loose!, Your score is: " + to_string(numberOfRightFig) + " Right, and " + to_string(numberOfWrongFig) + " Wrong.";
 	pGUI->PrintMessage(message);
 }
 
@@ -44,7 +41,6 @@ void ActionPickByType::ReadActionParameters()
 	for (int i = 0; i < pManager->getFigCount(); i++)
 	{
 		Fig = pManager->DrawnFigs(i);
-
 
 		if (dynamic_cast<CEllipse*>(Fig))
 			FigsList[0]++;

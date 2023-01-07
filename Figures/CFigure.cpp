@@ -64,6 +64,10 @@ void  CFigure::setGFX()
 	this->FigGfxInfo.isFilled = this->Isfill;
 	this->FigGfxInfo.BorderWdth = 3;
 }
+GfxInfo CFigure::GetGfxInfo() const
+{
+	return FigGfxInfo;
+}
 
 string CFigure::ColorToString(color c)const
 {
