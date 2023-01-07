@@ -18,6 +18,7 @@
 #include "Actions/ActionExit.h"
 #include "Actions/ActionPickByType.h"
 #include "Actions/ActionPickByColor.h"
+#include "Actions/ActionPickByTypeAndColor.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -130,6 +131,9 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 			break;
 		case P_BY_COLOR:
 			newAct = new ActionPickByColor(this);
+			break;
+		case P_BY_BOTH:
+			newAct = new PickByTypeAndColor(this);
 			break;
 		case EXIT:
 			newAct = new ActionExit(this);

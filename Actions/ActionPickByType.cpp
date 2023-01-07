@@ -27,9 +27,9 @@ void ActionPickByType::PrintScore(int score)
 	else if (score == 2)
 	{
 		numberOfWrongFig++;
-		message = "Wrong!, Your score is: " + to_string(pickedFigNumber) + " Right, and " + to_string(numberOfWrongFig) + " Wrong.";
+		message = "Wrong!, Your score is: " + to_string(numberOfRightFig) + " Right, and " + to_string(numberOfWrongFig) + " Wrong.";
 	}
-	else if(pickedFigNumber=0 && numberOfRightFig > numberOfWrongFig)
+	else if (pickedFigNumber == 0 && numberOfRightFig > numberOfWrongFig)
 	{
 		message = "YOU WIN!, Your score is: " + to_string(numberOfRightFig) + " Right, and " + to_string(numberOfWrongFig) + " Wrong.";
 	}

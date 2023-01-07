@@ -44,15 +44,13 @@ void ActionPickByColor::PrintScore(int score)
 		numberOfWrongColor++;
 		message = "Wrong!, Your score is: " + to_string(numberOfRightColor) + " Right, and " + to_string(numberOfWrongColor) + " Wrong.";
 	}
-	else if (pickedColorNumber = 0 && numberOfRightColor > numberOfWrongColor)
+	else if (pickedColorNumber == 0 && numberOfRightColor > numberOfWrongColor)
 	{
 		message = "YOU WIN!, Your score is: " + to_string(numberOfRightColor) + " Right, and " + to_string(numberOfWrongColor) + " Wrong.";
 	}
 	else
 		message = "YOU LOSE!, Your score is: " + to_string(numberOfRightColor) + " Right, and " + to_string(numberOfWrongColor) + " Wrong.";
 
-
-	//pickedColorNumber
 	pGUI->PrintMessage(message);
 }
 void ActionPickByColor::ReadActionParameters()
