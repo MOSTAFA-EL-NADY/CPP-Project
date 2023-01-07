@@ -1,13 +1,34 @@
 #include "CFigure.h"
 
-CFigure::CFigure() {}
+CFigure::CFigure() {
+	PlayHidden = false;
+	Selected = false;
+}
 
 CFigure::CFigure(GfxInfo FigureGfxInfo)
 { 
 	ID = ++CFigure::Fid;
 	FigGfxInfo = FigureGfxInfo;	//Default status is non-filled.
 	Selected = false;
+	PlayHidden = false;
+
 }
+//Hides Figures
+void CFigure::Hide()
+{
+	PlayHidden = true;
+}
+//Shows Figures
+void CFigure::Show()
+{
+	PlayHidden = false;
+}
+//Gives Current Status
+bool CFigure::HiddenStatus() const
+{
+	return PlayHidden;
+}
+
 
 void CFigure::SetSelected(bool s)
 {	Selected = s; }

@@ -16,6 +16,7 @@
 #include "Actions/ActionBackToDraw.h"
 #include "Actions/ActionSwitchToDrawMode.h"
 #include "Actions/ActionExit.h"
+#include "Actions/ActionPickByType.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -123,6 +124,9 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 		case TO_DRAW:
 			newAct = new ActionSwitchToDrawMode(this);
 			break;
+		case P_BY_Shape:
+			newAct = new ActionPickByType(this);
+			break;
 
 		case EXIT:
 			newAct = new ActionExit(this);
@@ -131,6 +135,7 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 		case STATUS:	//a click on the status bar ==> no action
 			return NULL;
 			break;
+
 	}	
 	return newAct;
 }
@@ -169,8 +174,11 @@ CFigure *ApplicationManager::GetFigure(int x, int y) const
 
 	///Add your code here to search for a figure given a point x,y	
 	for (int i = FigCount - 1; i >= 0; i--)
-		if (FigList[i]->Get(x, y))
-			return FigList[i];
+		if (FigList[i]->HiddenStatus() == false) {
+
+			if (FigList[i]->Get(x, y))
+				return FigList[i];
+		}
 	return NULL;
 
 	
@@ -190,9 +198,13 @@ CFigure* ApplicationManager::GetSelectedFigure() const
 
 //Draw all figures on the user interface
 void ApplicationManager::UpdateInterface() const
-{	
-	for(int i=0; i<FigCount; i++)
-		FigList[i]->DrawMe(pGUI);		//Call Draw function (virtual member fn)
+{
+	pGUI->ClearDrawArea();
+	for (int i = 0; i < FigCount; i++)
+	{
+		if (FigList[i]->HiddenStatus() == false)
+			FigList[i]->DrawMe(pGUI);        //Call Draw function (virtual member fn)
+	}
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //Return a pointer to the interface
@@ -361,3 +373,9 @@ ApplicationManager::~ApplicationManager()
 	delete pGUI;
 	
 }
+// Play mode
+CFigure* ApplicationManager::DrawnFigs(int i) const
+{
+	return FigList[i];
+}
+

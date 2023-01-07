@@ -155,7 +155,7 @@ ActionType GUI::MapInputToActionType() const
 			int ClickedItemOrder = (x / UI.MenuItemWidth);
 			switch (ClickedItemOrder)
 			{
-			case ITM_SHAPE:return P_BY_COLOR;
+			case ITM_SHAPE:return P_BY_Shape;
 			case ITM_COLOR:return P_BY_COLOR;
 			case ITM_SHAPE_COLOR:return P_BY_BOTH;
 			case ITM_DRAW_BACK:return TO_DRAW;

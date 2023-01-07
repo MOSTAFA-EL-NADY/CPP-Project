@@ -51,6 +51,8 @@ public:
 	void BringToFront(int selectedIndex);//bring to front function
 	void SendToBack(int selectedIndex);//send to back function
 	int getSelectedFigure(); //to get selected figure to resize
+	CFigure* DrawnFigs(int i) const; // play mode
+	
 };
 
 #endif

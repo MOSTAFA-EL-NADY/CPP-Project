@@ -12,6 +12,8 @@ protected:
 	static int Fid;
 	bool Selected;	//true if the figure is selected.
 	GfxInfo FigGfxInfo;	//Figure graphis info
+	bool PlayHidden;
+
 	
 	/// Add more parameters if needed.
 	color Drwcolor, Fillcolor;
@@ -23,6 +25,9 @@ public:
 	bool IsSelected() const;	//check whether fig is selected
 	virtual bool Get(int x, int y) const = 0;	//Check if the point inside The Figure
 	virtual void DrawMe(GUI*) const  = 0 ;		//Draw the figure
+	void Hide();
+	void Show();
+	bool HiddenStatus() const;
 	
 	void ChngDrawClr(color Dclr);	//changes the figure's drawing color
 	void ChngFillClr(color Fclr);	//changes the figure's filling color
